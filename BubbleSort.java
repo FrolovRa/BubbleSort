@@ -1,67 +1,35 @@
 import java.util.Arrays;
 
-class BubbleSort
-        {
-private static int i = 1;
-static int[] BubbleSorting(int[] arr)
-        {
-        //System.out.println(Arrays.toString(arr));
-        //System.out.println("iteration number " + i);
-        for (int index = 0; index < arr.length-1; index++)
-        {
-        //System.out.print("index = "+index);
-        if (arr[index] > arr[index + 1])
-        {
-        int buff = arr[index];
-        arr[index] = arr[index+1];
-        arr[index+1] = buff;
+class BubbleSort {
+        static int[] BubbleSorting(int[] arr) {
+            boolean status = true;
+            do {
+                for (int i = 0; i < arr.length - 1; i++) {
+                    System.out.println("index = " + i);
+                    if (arr[i] > arr[i + 1]) {
+                        int temp;
+                        temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                    }
+                    System.out.println(Arrays.toString(arr));
+                }
+                //check the complete of sorting
+                for(int i = 0; i < arr.length - 1; i++){
+                    if (arr[i]>arr[i+1]) {
+                        System.out.println("array is not sorted yet");
+                        System.out.println(Arrays.toString(arr));
+                        break;
+                    }
+                    if (i == arr.length - 2){
+                        status = false;
+                        System.out.println("finished!");
+                    };
+
+                }
+            } while (status);
+            return arr;
         }
 
-        //System.out.println(Arrays.toString(arr));
+}
 
-        }
-        i++;
-        // check the complete of BubbleSorting
-        for (int index = 0; index < arr.length-1; index++)
-        {
-        if (arr[index] > arr[index + 1])
-        {
-        BubbleSorting(arr);
-        }
-
-        }
-
-        return arr;
-
-        }
-
-static void BubbleSorting(double[] arr)
-        {
-        //System.out.println(Arrays.toString(arr));
-        //System.out.println("iteration number " + i);
-        for (int index = 0; index < arr.length-1; index++)
-        {
-        //System.out.print("index = "+index);
-        if (arr[index] > arr[index + 1])
-        {
-        double buff = arr[index];
-        arr[index] = arr[index+1];
-        arr[index+1] = buff;
-        }
-
-        //System.out.println(Arrays.toString(arr));
-
-        }
-        i++;
-        // check the complete of BubbleSorting
-        for (int index = 0; index < arr.length-1; index++)
-        {
-        if (arr[index] > arr[index + 1])
-        {
-        BubbleSorting(arr);
-        }
-
-        }
-
-        }
-        }
